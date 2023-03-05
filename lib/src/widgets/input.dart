@@ -28,6 +28,7 @@ class Input extends StatefulWidget {
     required this.onSendPressed,
     this.onTextChanged,
     this.onTextFieldTap,
+    this.controller,
     required this.sendButtonVisibilityMode,
   }) : super(key: key);
 
@@ -55,6 +56,8 @@ class Input extends StatefulWidget {
   /// Defaults to [SendButtonVisibilityMode.editing].
   final SendButtonVisibilityMode sendButtonVisibilityMode;
 
+  final TextEditingController controller;
+
   @override
   _InputState createState() => _InputState();
 }
@@ -63,11 +66,15 @@ class Input extends StatefulWidget {
 class _InputState extends State<Input> {
   final _inputFocusNode = FocusNode();
   bool _sendButtonVisible = false;
-  final _textController = TextEditingController();
+  TextEditingController _textController = TextEditingController();
 
   @override
   void initState() {
     super.initState();
+
+    if (widget.controller != null) {
+      _textController = widget.controller;
+    }
 
     _handleSendButtonVisibilityModeChange();
   }
