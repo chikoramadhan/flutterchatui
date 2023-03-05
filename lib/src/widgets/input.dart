@@ -73,7 +73,7 @@ class _InputState extends State<Input> {
     super.initState();
 
     if (widget.controller != null) {
-      _textController = widget.controller;
+      _textController = widget.controller!;
     }
 
     _handleSendButtonVisibilityModeChange();
