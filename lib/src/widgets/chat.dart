@@ -414,7 +414,7 @@ class _ChatState extends State<Chat> {
         onMessageStatusLongPress: widget.onMessageStatusLongPress,
         onMessageStatusTap: widget.onMessageStatusTap,
         onMessageTap: (context, tappedMessage) {
-          if (tappedMessage is types.ImageMessage &&
+          if (tappedMessage is types.ImageMessage && !((tappedMessage as types.ImageMessage).metadata != null) &&
               widget.disableImageGallery != true) {
             _onImagePressed(tappedMessage);
           }
