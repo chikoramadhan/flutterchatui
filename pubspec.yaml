@@ -20,7 +20,9 @@ dependencies:
   flutter_parsed_text: ^2.2.1
   intl: ^0.17.0
   meta: ^1.7.0
-  photo_view: ^0.13.0
+  photo_view:
+    git:
+      url: https://github.com/chikoramadhan/photo_view.git
   url_launcher: ^6.0.20
   visibility_detector: ^0.2.2
 
